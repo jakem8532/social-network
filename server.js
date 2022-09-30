@@ -8,9 +8,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use(require('./routes'))
+app.use(express.static('public'))
 
-mongoose.connect(processs.env.MONGODB_URI || 'mongodb://localhost/social-network-API', {
-    useFindAndModify: false,
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-API', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
